@@ -73,11 +73,7 @@ This project currently launches the saved `vless://` link in an external client.
 
 If no compatible VLESS client is installed, the app copies the link to the clipboard and shows a message.
 
-## Notes
 
-- Imported `.ovpn` data is stored in app-private storage because it can contain certificates and other sensitive material.
-- The actual VPN engine, routing, and system notification are handled by the external client used for the selected protocol.
-- Before publishing this project, keep usernames, passwords, and live `vless://` links out of source code and test defaults.
 
 ## README на русском
 
@@ -154,8 +150,4 @@ If no compatible VLESS client is installed, the app copies the link to the clipb
 
 Если на устройстве нет подходящего VLESS-клиента, приложение скопирует ссылку в буфер обмена и покажет сообщение.
 
-### Примечания
 
-- Импортированный `.ovpn` хранится в приватном хранилище приложения, потому что может содержать сертификаты и другие чувствительные данные.
-- Реальный VPN-движок, маршрутизация и системное уведомление об активном VPN обрабатываются внешним клиентом выбранного протокола.
-- Перед публикацией проекта не оставляйте в исходниках реальные логины, пароли и рабочие `vless://` ссылки.
