@@ -1,153 +1,77 @@
-# Simple OpenVPN + VLESS Importer
+# Simple VLESS Client
 
-This Android Studio project provides two connection modes in one app:
+This project is now a VLESS-only Android app with a built-in `VpnService` flow.
 
-- `OpenVPN` import and launch through the official external API of **OpenVPN for Android** (`de.blinkt.openvpn`)
-- `VLESS` link save and handoff to a compatible external client on the device
+## What is already inside the app
 
-The app does not implement the OpenVPN or VLESS engines itself. It acts as a clean Android front end that stores profile data, lets the user switch between protocols, and launches the right client flow.
+- VLESS-only UI
+- local storage for the `vless://` profile
+- embedded `VpnService`
+- Xray JSON config builder for VLESS links
+- foreground-service connect / disconnect flow
+- reflection-based bridge for `libv2ray` / `AndroidLibXrayLite`
 
-## What the app does
+## What is still required for a real connection
 
-- shows separate `OpenVPN` and `VLESS` sections in one interface
-- imports a local `.ovpn` file from storage
-- injects username and password into the OpenVPN profile as inline `<auth-user-pass>`
-- stores imported profile data in app-private storage
-- connects to **OpenVPN for Android** through its documented AIDL API
-- requests OpenVPN API permission
-- requests Android VPN permission through OpenVPN for Android
-- starts the selected OpenVPN profile
-- accepts `vless://` links
-- parses VLESS server, port, transport, security, host, and path
-- saves the VLESS profile locally
-- opens the VLESS link in a compatible installed client
-- shows connection and import status in the UI
+To connect directly from the app, place a compatible prebuilt `.aar` into:
 
-## Important requirements
+- `app/libs`
 
-### OpenVPN mode
+Without that AAR, the app can save the profile and request VPN permission, but it cannot start the embedded VLESS core.
 
-You must install **OpenVPN for Android** by Arne Schwabe on the device first.
+## Project settings
 
-Package name:
+- `minSdk = 24`
+- Kotlin
+- Android Studio / Gradle
+- OpenVPN removed from the app module
 
-- `de.blinkt.openvpn`
+## How to build the required core AAR
 
-### VLESS mode
+The repository already contains `AndroidLibXrayLite` sources. The upstream build steps are:
 
-You must install a compatible VLESS client on the device.
+1. Install JDK, Android SDK, Go, and `gomobile`
+2. Run `gomobile init`
+3. In `AndroidLibXrayLite`, run `go mod tidy -v`
+4. Build:
 
-Examples:
+```bash
+gomobile bind -v -androidapi 24 -trimpath -ldflags='-s -w -buildid= -checklinkname=0' ./
+```
 
-- `Hiddify`
-- `v2rayNG`
+Then copy the generated `.aar` into:
 
-This project currently launches the saved `vless://` link in an external client. It does not embed `Xray-core` or a built-in VLESS engine inside the APK.
+- `outputs/SimpleKotlinVpn/app/libs/`
 
-## Build and run
-
-1. Open the `SimpleKotlinVpn` folder in Android Studio.
-2. Let Gradle sync.
-3. Run the app on Android 5.0+.
-
-### OpenVPN flow
-
-1. Install **OpenVPN for Android** on the test device.
-2. Open this app.
-3. Switch to the `OpenVPN` tab.
-4. Press **Import .ovpn Profile** and select your profile file.
-5. Enter username and password.
-6. Press **Connect**.
-7. Confirm API permission for OpenVPN for Android.
-8. Confirm VPN permission if OpenVPN for Android asks for it.
-
-### VLESS flow
-
-1. Install `Hiddify` or `v2rayNG` on the device.
-2. Open this app.
-3. Switch to the `VLESS` tab.
-4. Paste a `vless://` link.
-5. Press **Save VLESS Profile** if you want to keep it in the app.
-6. Press **Connect VLESS**.
-7. The app will open the link in a compatible installed client.
-
-If no compatible VLESS client is installed, the app copies the link to the clipboard and shows a message.
-
-
+After that, sync Gradle in Android Studio and run the app.
 
 ## README на русском
 
-Это Android Studio проект с двумя режимами подключения в одном приложении:
+Это теперь VLESS-only версия приложения. В самом `app` модуле больше нет зависимости от OpenVPN или Hiddify.
 
-- `OpenVPN` через официальный внешний API приложения **OpenVPN for Android**
-- `VLESS` через сохранение `vless://` ссылки и запуск во внешнем совместимом клиенте
+### Что уже сделано
 
-Само приложение не содержит встроенный движок OpenVPN или VLESS. Оно выступает как Android-интерфейс для импорта профилей, хранения данных и запуска нужного клиента.
+- полностью оставлен только `VLESS`
+- добавлен собственный `VpnService`
+- добавлен foreground service для подключения
+- добавлен parser для `vless://` ссылки
+- добавлен builder, который собирает runtime-конфиг Xray
+- добавлен bridge под `libv2ray` / `AndroidLibXrayLite`
+- экран уже умеет делать `Connect / Disconnect` через само приложение
 
-### Что умеет приложение
+### Что еще нужно для реального подключения
 
-- показывает отдельные разделы `OpenVPN` и `VLESS`
-- импортирует локальный `.ovpn` файл
-- подставляет логин и пароль в OpenVPN-профиль через inline `<auth-user-pass>`
-- хранит импортированные данные в приватном хранилище приложения
-- подключается к **OpenVPN for Android** через его AIDL API
-- запрашивает разрешение на API OpenVPN
-- запрашивает системное VPN-разрешение через OpenVPN for Android
-- запускает выбранный OpenVPN-профиль
-- принимает `vless://` ссылки
-- разбирает адрес сервера, порт, transport, security, host и path
-- сохраняет VLESS-профиль локально
-- открывает VLESS-ссылку во внешнем установленном клиенте
-- показывает статус импорта и подключения в интерфейсе
+Нужно положить готовый `.aar` с `libv2ray` в:
 
-### Что нужно для работы
+- `outputs/SimpleKotlinVpn/app/libs/`
 
-#### Режим OpenVPN
+Пока этого `.aar` нет, приложение честно работает как VLESS-клиентская оболочка, но встроенный core не сможет стартовать.
 
-На устройстве должно быть установлено приложение **OpenVPN for Android** от Arne Schwabe.
+### Как запустить после этого
 
-Имя пакета:
-
-- `de.blinkt.openvpn`
-
-#### Режим VLESS
-
-На устройстве должен быть установлен совместимый VLESS-клиент.
-
-Подойдут, например:
-
-- `Hiddify`
-- `v2rayNG`
-
-Сейчас проект не встраивает `Xray-core` внутрь APK. Вместо этого приложение передаёт сохранённую `vless://` ссылку во внешний клиент.
-
-### Сборка и запуск
-
-1. Откройте папку `SimpleKotlinVpn` в Android Studio.
-2. Дождитесь `Gradle Sync`.
-3. Запустите приложение на Android 5.0+.
-
-#### Сценарий OpenVPN
-
-1. Установите **OpenVPN for Android** на устройство.
-2. Откройте приложение.
-3. Переключитесь на вкладку `OpenVPN`.
-4. Нажмите **Import .ovpn Profile** и выберите профиль.
-5. Введите логин и пароль.
-6. Нажмите **Connect**.
-7. Подтвердите доступ к API OpenVPN for Android.
-8. Подтвердите VPN-разрешение, если приложение его запросит.
-
-#### Сценарий VLESS
-
-1. Установите `Hiddify` или `v2rayNG` на устройство.
-2. Откройте приложение.
-3. Переключитесь на вкладку `VLESS`.
-4. Вставьте `vless://` ссылку.
-5. При необходимости нажмите **Save VLESS Profile**.
-6. Нажмите **Connect VLESS**.
-7. Приложение откроет ссылку во внешнем совместимом клиенте.
-
-Если на устройстве нет подходящего VLESS-клиента, приложение скопирует ссылку в буфер обмена и покажет сообщение.
-
-
+1. Открыть `outputs/SimpleKotlinVpn` в Android Studio
+2. Дождаться Gradle Sync
+3. Проверить, что `.aar` лежит в `app/libs`
+4. Запустить `app` на устройстве или эмуляторе с Android 7.0+
+5. Вставить `vless://` ссылку
+6. Нажать `Connect`
