@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SimpleKotlinVpn" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/app_background</item>
+        <item name="android:windowBackground">@color/app_background</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.HeroTitle" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.HeroBody" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.PanelTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SectionTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SectionHeader" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.Body" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.Badge" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/status_idle_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.StatLabel" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.StatValue" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.Footer" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SettingsHeroTitle" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/settings_heading</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SettingsSectionTitle" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/settings_heading</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SettingsCardLabel" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/settings_card_label</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SettingsCardValue" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/settings_card_value</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SettingsCardTitle" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/settings_card_value</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SettingsCardSubtitle" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/settings_card_subtle</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextAppearance.SimpleKotlinVpn.SettingsChevron" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/settings_card_chevron</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Widget.SimpleKotlinVpn.ButtonPrimary" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingLeft">18dp</item>
+        <item name="android:paddingRight">18dp</item>
+    </style>
+
+    <style name="Widget.SimpleKotlinVpn.ButtonSecondary" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button_secondary</item>
+        <item name="android:textColor">@color/accent_dark</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingLeft">18dp</item>
+        <item name="android:paddingRight">18dp</item>
+    </style>
+
+    <style name="Widget.SimpleKotlinVpn.TabButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_tab_selector</item>
+        <item name="android:textColor">@color/tab_text_selector</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">46dp</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+    </style>
+
+    <style name="Widget.SimpleKotlinVpn.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+</resources>

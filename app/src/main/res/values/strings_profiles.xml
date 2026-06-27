@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choose_vless_profile">Choose Profile</string>
+    <string name="choose_vless_profile_count">Profiles (%1$d)</string>
+    <string name="vless_profiles_title">Saved VLESS Profiles</string>
+    <string name="vless_profiles_empty">There are no saved VLESS profiles yet.</string>
+    <string name="vless_profile_selected">Selected profile: %1$s</string>
+    <string name="vless_profile_selected_reconnect">Selected profile: %1$s. Reconnect to apply it.</string>
+    <string name="vless_profile_action_use">Use profile</string>
+    <string name="vless_profile_action_delete">Delete profile</string>
+    <string name="vless_profile_active_template">%1$s (active)</string>
+    <string name="vless_profile_delete_title">Delete profile?</string>
+    <string name="vless_profile_delete_message">Delete the saved profile "%1$s"?</string>
+    <string name="vless_profile_delete_disconnect_first">Disconnect first before deleting the active profile.</string>
+    <string name="vless_profile_delete_failed">The profile could not be deleted.</string>
+    <string name="vless_profile_deleted">Deleted profile: %1$s</string>
+</resources>

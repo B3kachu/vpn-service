@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choose_vless_profile">Выбрать профиль</string>
+    <string name="choose_vless_profile_count">Профили (%1$d)</string>
+    <string name="vless_profiles_title">Сохранённые VLESS-профили</string>
+    <string name="vless_profiles_empty">Пока нет сохранённых VLESS-профилей.</string>
+    <string name="vless_profile_selected">Выбран профиль: %1$s</string>
+    <string name="vless_profile_selected_reconnect">Выбран профиль: %1$s. Переподключитесь, чтобы применить его.</string>
+    <string name="vless_profile_action_use">Использовать профиль</string>
+    <string name="vless_profile_action_delete">Удалить профиль</string>
+    <string name="vless_profile_active_template">%1$s (активный)</string>
+    <string name="vless_profile_delete_title">Удалить профиль?</string>
+    <string name="vless_profile_delete_message">Удалить сохранённый профиль "%1$s"?</string>
+    <string name="vless_profile_delete_disconnect_first">Сначала отключитесь, чтобы удалить активный профиль.</string>
+    <string name="vless_profile_delete_failed">Не удалось удалить профиль.</string>
+    <string name="vless_profile_deleted">Профиль удалён: %1$s</string>
+</resources>

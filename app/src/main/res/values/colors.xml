@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_background">#F4F7F4</color>
+    <color name="panel_background">#8CFFFFFF</color>
+    <color name="hero_background">#73FFFFFF</color>
+    <color name="tile_background">#52FFFFFF</color>
+    <color name="border_color">#99FFFFFF</color>
+    <color name="tab_background">#8CFFFFFF</color>
+    <color name="button_secondary_background">#BDEFE3</color>
+    <color name="text_primary">#10231C</color>
+    <color name="text_secondary">#31463D</color>
+    <color name="accent">#1F8A70</color>
+    <color name="accent_dark">#155748</color>
+    <color name="accent_soft">#A9E4D4</color>
+    <color name="status_connected_bg">#D6EFE7</color>
+    <color name="status_pending_bg">#FCE5BF</color>
+    <color name="status_idle_bg">#E5EBE7</color>
+    <color name="status_error_bg">#F6D8D3</color>
+    <color name="status_idle_text">#234136</color>
+    <color name="settings_heading">#FFFFFF</color>
+    <color name="settings_screen_background">#1E1E1E</color>
+    <color name="settings_card_background">#383838</color>
+    <color name="settings_card_label">#B4B4B4</color>
+    <color name="settings_card_value">#FFFFFF</color>
+    <color name="settings_card_chevron">#F0F0F0</color>
+    <color name="settings_card_subtle">#9E9E9E</color>
+</resources>

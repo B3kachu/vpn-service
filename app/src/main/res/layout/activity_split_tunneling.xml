@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings_screen_background"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="18dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="12dp">
+
+    <TextView
+        android:id="@+id/backTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/split_tunnel_back"
+        android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardSubtitle" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/settings_split_tunneling"
+        android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsHeroTitle" />
+
+    <TextView
+        android:id="@+id/splitTunnelSummaryTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/split_tunnel_none_selected"
+        android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardSubtitle" />
+
+    <LinearLayout
+        android:id="@+id/modeCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_settings_card"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="22dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/split_tunnel_mode_title"
+                android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardLabel" />
+
+            <TextView
+                android:id="@+id/modeValueTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/split_mode_bypass_selected"
+                android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardValue" />
+
+            <TextView
+                android:id="@+id/modeHintTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/split_mode_bypass_selected_summary"
+                android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardSubtitle" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="⌄"
+            android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsChevron" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/appsTabButton"
+            style="@style/Widget.SimpleKotlinVpn.TabButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/split_tunnel_tab_apps" />
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/domainsTabButton"
+            style="@style/Widget.SimpleKotlinVpn.TabButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/split_tunnel_tab_domains" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/appsTabContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            style="@style/Widget.SimpleKotlinVpn.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/split_tunnel_search_hint"
+            android:inputType="textNoSuggestions" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/split_tunnel_description"
+            android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardSubtitle" />
+
+        <ListView
+            android:id="@+id/appsListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="14dp"
+            android:layout_weight="1"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="12dp"
+            android:listSelector="@android:color/transparent"
+            android:overScrollMode="never" />
+
+        <TextView
+            android:id="@+id/emptyStateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:text="@string/split_tunnel_empty_state"
+            android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardSubtitle"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/domainsTabContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_settings_card"
+        android:orientation="vertical"
+        android:padding="22dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/split_tunnel_domains_title"
+            android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardLabel" />
+
+        <EditText
+            android:id="@+id/domainsEditText"
+            style="@style/Widget.SimpleKotlinVpn.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="top|start"
+            android:hint="@string/split_tunnel_domains_hint"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:minLines="4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/split_tunnel_domains_helper"
+            android:textAppearance="@style/TextAppearance.SimpleKotlinVpn.SettingsCardSubtitle" />
+    </LinearLayout>
+</LinearLayout>
